@@ -1,4 +1,4 @@
-# Casos de Prueba — SchoolApp CLI
+# Casos de Prueba — ManageSchool
 **Formato:** Gherkin (BDD) 
 **Versión:** 1.0.0 
 **Asociación:** Cada caso de prueba tiene un ID único para vincularlo a issues de GitHub/GitLab
