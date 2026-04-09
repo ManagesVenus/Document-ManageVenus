@@ -2,7 +2,7 @@
 **Versión:** 1.0.1 
 **Fecha:** 31/03/2026 
 **Estado:** Borrador aprobado 
-**Proyecto:** SchoolApp CLI 
+**Proyecto:** ManageSchool
 **Clasificación:** Uso interno — Equipo de desarrollo + Product Owner
 
 ---
@@ -24,7 +24,7 @@
 
 ### 1.1 Propósito
 
-Este documento describe los requisitos del sistema **SchoolApp CLI**, una aplicación de gestión escolar que opera completamente por línea de comandos (terminal). Su objetivo es brindar al colegio una herramienta digital para administrar estudiantes, profesores, materias, tareas y notas, eliminando el uso de registros manuales en papel o en hojas de cálculo desorganizadas.
+Este documento describe los requisitos del sistema **ManageSchool**, una aplicación de gestión escolar que opera completamente por línea de comandos (terminal). Su objetivo es brindar al colegio una herramienta digital para administrar estudiantes, profesores, materias, tareas y notas, eliminando el uso de registros manuales en papel o en hojas de cálculo desorganizadas.
 
 El documento está dirigido a:
 - El **Product Owner** y/o cliente del colegio (para validar que el sistema cubre sus necesidades).
@@ -33,7 +33,7 @@ El documento está dirigido a:
 
 ### 1.2 Alcance del Sistema
 
-**SchoolApp CLI** es un sistema de consola que permite:
+**ManageSchool** es un sistema de consola que permite:
 
 - Gestionar tres tipos de usuarios: **Administrador**, **Profesor** y **Estudiante**.
 - Controlar el acceso mediante un inicio de sesión con correo institucional (`@colegio.edu.co`).
@@ -57,7 +57,7 @@ Actualmente el colegio gestiona notas, tareas y estudiantes de forma manual o co
 - Dificultad para identificar a los estudiantes más destacados.
 - Falta de trazabilidad en las acciones de cada actor (quién creó qué, cuándo).
 
-**SchoolApp CLI** resuelve estos problemas de forma progresiva, sentando las bases para una plataforma escolar completa.
+**ManageSchool** resuelve estos problemas de forma progresiva, sentando las bases para una plataforma escolar completa.
 
 ### 1.4 Supuestos y Dependencias
 
@@ -87,10 +87,10 @@ Actualmente el colegio gestiona notas, tareas y estudiantes de forma manual o co
 
 ### 2.1 Perspectiva del Producto
 
-SchoolApp CLI es una aplicación independiente (standalone) que no depende de ningún sistema externo en su versión inicial. Es el punto de partida de lo que eventualmente será una plataforma escolar completa con interfaz web, base de datos relacional y acceso remoto.
+ManageSchool es una aplicación independiente (standalone) que no depende de ningún sistema externo en su versión inicial. Es el punto de partida de lo que eventualmente será una plataforma escolar completa con interfaz web, base de datos relacional y acceso remoto.
 
 ```
-[ Usuario en Terminal ] [ SchoolApp CLI (Java 21) ] [ JSON Server (archivos .json) ]
+[ Usuario en Terminal ] [ ManageSchool (Java 21) ] [ JSON Server (archivos .json) ]
 ```
 
 El sistema evoluciona así:
@@ -152,7 +152,7 @@ A continuación se describen las funciones principales del sistema de forma clar
 #### Menú Principal (sin sesión)
 ```
 
-SCHOOLAPP CLI v1.0 
+ManageSchool v1.0 
 
 1. Iniciar sesión 
 2. Salir 
@@ -357,7 +357,7 @@ MENÚ ESTUDIANTE
 El proyecto sigue una **arquitectura de capas organizada por dominio** dentro de un proyecto Maven monolítico. Cada dominio funcional (auth, student, professor, etc.) contiene sus propias capas (controller, service, repository, model), lo que permite separación de responsabilidades sin la complejidad de múltiples módulos Maven.
 
 ```
-schoolapp-cli/
+ManageSchool/
 ├── pom.xml                                         <- Proyecto Maven
 └── src/
     ├── main/java/com/school/
@@ -591,9 +591,9 @@ Todo cambio al SRS o al sistema debe seguir este proceso:
 
 | Versión SRS | Fecha | Autor | Descripción del Cambio |
 |-------------|-------|-------|------------------------|
-| 1.0.0 | 2025 | Equipo SchoolApp | Versión inicial del SRS |
-| 1.0.1 | 31/03/2026 | Equipo SchoolApp | Corrección de 12 inconsistencias: flujo de registro/roles, política de cascada (RN-09), promedio general con materias sin notas (RN-04), comportamiento de ranking con trimestre en curso (RF-31b), menú Admin reconciliado, alcance de tareas documentado, tiempo de respuesta unificado (OBJ-02/KPI-02), restricciones explícitas del Profesor (RF-13b), corrección RF-11 (tareas no son huérfanas), fecha completa en encabezado |
-| 1.0.2 | 31/03/2026 | Equipo SchoolApp | Agregado dominio completo de Gestión de Profesores: RF-34 a RF-38, RN-10, paquete `professor` en arquitectura por dominio, diagrama de relaciones actualizado, tabla de archivos JSON de persistencia, matriz de trazabilidad actualizada |
+| 1.0.0 | 2025 | Equipo ManageSchool | Versión inicial del SRS |
+| 1.0.1 | 31/03/2026 | Equipo ManageSchool | Corrección de 12 inconsistencias: flujo de registro/roles, política de cascada (RN-09), promedio general con materias sin notas (RN-04), comportamiento de ranking con trimestre en curso (RF-31b), menú Admin reconciliado, alcance de tareas documentado, tiempo de respuesta unificado (OBJ-02/KPI-02), restricciones explícitas del Profesor (RF-13b), corrección RF-11 (tareas no son huérfanas), fecha completa en encabezado |
+| 1.0.2 | 31/03/2026 | Equipo ManageSchool | Agregado dominio completo de Gestión de Profesores: RF-34 a RF-38, RN-10, paquete `professor` en arquitectura por dominio, diagrama de relaciones actualizado, tabla de archivos JSON de persistencia, matriz de trazabilidad actualizada |
 
 ---
 
