@@ -1,6 +1,6 @@
-# ⚙️ Tareas Técnicas por Issue — ManageVenus
+# ⚙️ Tareas Técnicas por Issue — ManageSchool
 **Versión:** 1.0.0  
-**Proyecto:** ManageVenus  
+**Proyecto:** ManageSchool  
 **Stack:** Java 21 · Maven · Jackson · jBCrypt · JUnit 5  
 **Arquitectura:** Capas por dominio — `Controller → Service → Repository → Model`  
 **Persistencia:** Archivos JSON locales leídos/escritos con Jackson (sin servidor HTTP)
