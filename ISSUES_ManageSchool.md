@@ -1,4 +1,4 @@
-# Historias de Usuario e Issues — SchoolApp CLI
+# Historias de Usuario e Issues — ManageSchool
 **Versión:** 1.0.0 
 **Estructura:** Issues tipo GitHub, organizadas por Feature y Developer
 
@@ -40,7 +40,7 @@
 Se debe crear la estructura base del proyecto Maven con paquetes organizados por dominio, siguiendo la arquitectura de capas definida en el SRS.
 
 ### Criterios de Aceptación
-- [ ] El proyecto `schoolapp-cli` tiene un `pom.xml` con todas las dependencias necesarias
+- [ ] El proyecto `ManageSchool` tiene un `pom.xml` con todas las dependencias necesarias
 - [ ] Existen los paquetes por dominio: `auth`, `student`, `professor`, `subject`, `task`, `grade`, `ranking`, `shared`
 - [ ] Cada paquete contiene sus capas: `controller`, `service`, `repository`, `model`
 - [ ] El proyecto compila sin errores con `mvn clean install`
@@ -58,7 +58,7 @@ RT-005: JUnit 5 para pruebas unitarias
 
 ### Estructura esperada
 ```
-schoolapp-cli/
+ManageSchool/
 ├── pom.xml
 └── src/main/java/com/school/
     ├── App.java
